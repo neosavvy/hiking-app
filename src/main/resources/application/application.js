@@ -11,7 +11,8 @@ Neosavvy.Dependencies = [
     'neosavvy.directives',
     'neosavvy.constants',
     'neosavvy.controllers',
-    'ngRoute'
+    'ngRoute',
+    'firebase'
 ];
 
 angular.module(

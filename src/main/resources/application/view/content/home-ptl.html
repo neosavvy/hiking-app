@@ -10,36 +10,34 @@
     <!-- Second Band (Image Left with Text) -->
 
     <div class="row">
-        <div class="large-4 columns">
-            <img src="http://placehold.it/400x300&text=[img]">
-        </div>
-        <div class="large-8 columns">
-            <h4>This is a content section.</h4>
+        <div class="small-12 columns">
             <div class="row">
-                <div class="large-6 columns">
-                    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+                <div class="small-2 columns">
+                    <h4>Add Gear</h4>
                 </div>
-                <div class="large-6 columns">
-                    <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+                <div class="small-10 columns">
+                    <button ng-click="addGear()">Add Gear</button>
+                </div>
+
+            </div>
+            <div class="row" ng-repeat="gearItem in gear">
+                <div class="small-2 columns">
+                    {{gearItem.name}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.weight}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.description}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.purchaseLink}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.imageUrl}}
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- Third Band (Image Right with Text) -->
-
-    <div class="row">
-        <div class="large-8 columns">
-            <h4>This is a content section.</h4>
-
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-
-            <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-        </div>
-        <div class="large-4 columns">
-            <img src="http://placehold.it/400x300&text=[img]">
-        </div>
-    </div>
 </div>
