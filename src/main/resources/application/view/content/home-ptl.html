@@ -1,13 +1,4 @@
 <div ng-controller="view.content.HomeController as ctrl">
-    <!-- First Band (Image) -->
-    <div class="row">
-        <div class="large-12 columns" ng-click="ctrl.onImageClick()">
-            <img src="http://placehold.it/1000x400&text=[img]">
-
-            <hr>
-        </div>
-    </div>
-    <!-- Second Band (Image Left with Text) -->
 
     <div class="row">
         <div class="small-12 columns">
@@ -16,7 +7,7 @@
                 <div class="small-2 columns">
 
                 </div>
-                <div class="small-2 columns">
+                <div class="small-3 columns">
                     <input
                         type="text"
                         placeholder="Item Name"
@@ -28,13 +19,7 @@
                         placeholder="Item Weight"
                         ng-model="newItem.weight">
                 </div>
-                <div class="small-2 columns">
-                    <textarea
-                        placeholder="Description"
-                        ng-model="newItem.description">
-                    </textarea>
-                </div>
-                <div class="small-2 columns">
+                <div class="small-3 columns">
                     <input
                         type="text"
                         placeholder="Purchase URL"
@@ -49,7 +34,14 @@
                 <div class="small-2 columns">
                     <button ng-click="addGear()">Add Gear</button>
                 </div>
-
+            </div>
+            <div class="row">
+                <div class="small-10 columns">
+                    <textarea
+                            placeholder="Description"
+                            ng-model="newItem.description">
+                    </textarea>
+                </div>
             </div>
             <div class="row" ng-repeat="gearItem in gear">
                 <div class="small-2 columns">
