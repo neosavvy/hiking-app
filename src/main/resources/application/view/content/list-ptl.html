@@ -1,25 +1,67 @@
 <div class="row"
      ng-controller="view.content.ListController as ctrl">
 
-    <div class="small-12 medium-8 large-6 columns medium-push-4 large-push-3">
-
-        <!-- Feed Entry -->
-        <div ng-repeat="item in ctrl.sayingsList">
+    <div class="row">
+        <div class="small-12 columns">
+            <h4>Add Gear</h4>
             <div class="row">
-                <div class="small-3 large-2 columns "><img src="http://placehold.it/80x80&text=[img]"/></div>
-                <div class="small-9 large-10 columns">
-                    <p><strong>{{item.name}} said:</strong> {{item.saying}}</p>
-                    <ul class="inline-list">
-                        <li><a href="">Reply</a></li>
-                        <li><a href="">Share</a></li>
-                    </ul>
+                <div class="small-2 columns">
+
+                </div>
+                <div class="small-3 columns">
+                    <input
+                            type="text"
+                            placeholder="Item Name"
+                            ng-model="newItem.name">
+                </div>
+                <div class="small-2 columns">
+                    <input
+                            type="number"
+                            placeholder="Item Weight"
+                            ng-model="newItem.weight">
+                </div>
+                <div class="small-3 columns">
+                    <input
+                            type="text"
+                            placeholder="Purchase URL"
+                            ng-model="newItem.purchaseLink">
+                </div>
+                <div class="small-2 columns">
+                    <input
+                            type="text"
+                            placeholder="Image URL"
+                            ng-model="newItem.imageUrl">
+                </div>
+                <div class="small-2 columns">
+                    <button ng-click="addGear()">Add Gear</button>
                 </div>
             </div>
-            <!-- End Feed Entry -->
-
-            <hr/>
+            <div class="row">
+                <div class="small-10 columns">
+                    <textarea
+                            placeholder="Description"
+                            ng-model="newItem.description">
+                    </textarea>
+                </div>
+            </div>
+            <div class="row" ng-repeat="gearItem in gear">
+                <div class="small-2 columns">
+                    {{gearItem.name}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.weight}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.description}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.purchaseLink}}
+                </div>
+                <div class="small-2 columns">
+                    {{gearItem.imageUrl}}
+                </div>
+            </div>
         </div>
-
     </div>
 
 </div>

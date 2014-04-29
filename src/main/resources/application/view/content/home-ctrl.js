@@ -4,24 +4,39 @@ Neosavvy.Controllers.controller('view.content.HomeController',
         '$rootScope',
         'constants.Configuration',
         '$firebase',
+        'service.FirebaseAuthenticationService',
         function (
             $scope,
             $rootScope,
             configuration,
-            $firebase) {
+            $firebase,
+            firebaseAuthService) {
 
-            var gear = new Firebase("https://hiker.firebaseio.com/gear");
-            $scope.gear = $firebase(gear);
+            $scope.createMode = false;
+            $scope.emailAddress;
+            $scope.password;
 
-            $scope.newItem = {}
+            $scope.login = function() {
 
-            $scope.addGear = function() {
-
-                $scope.gear.$add($scope.newItem);
-                $scope.newItem = {}
+                firebaseAuthService.login(
+                    $scope.emailAddress,
+                    $scope.password)
 
             }
 
+            $scope.createUser = function() {
+
+                firebaseAuthService.createUser(
+                    $scope.emailAddress,
+                    $scope.password)
+            }
+
+
+            $scope.forgotPassword = function() {
+                firebaseAuthService.forgotPassword(
+                    $scope.emailAddress
+                )
+            }
         }
     ]
 );

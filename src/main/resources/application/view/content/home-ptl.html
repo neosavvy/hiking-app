@@ -1,66 +1,39 @@
-<div ng-controller="view.content.HomeController as ctrl">
+<div ng-controller="view.content.HomeController">
 
-    <div class="row">
-        <div class="small-12 columns">
-            <h4>Add Gear</h4>
-            <div class="row">
-                <div class="small-2 columns">
+    <div class="row small-centered">
 
-                </div>
-                <div class="small-3 columns">
-                    <input
-                        type="text"
-                        placeholder="Item Name"
-                        ng-model="newItem.name">
-                </div>
-                <div class="small-2 columns">
-                    <input
-                        type="number"
-                        placeholder="Item Weight"
-                        ng-model="newItem.weight">
-                </div>
-                <div class="small-3 columns">
-                    <input
-                        type="text"
-                        placeholder="Purchase URL"
-                        ng-model="newItem.purchaseLink">
-                </div>
-                <div class="small-2 columns">
-                    <input
-                        type="text"
-                        placeholder="Image URL"
-                        ng-model="newItem.imageUrl">
-                </div>
-                <div class="small-2 columns">
-                    <button ng-click="addGear()">Add Gear</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="small-10 columns">
-                    <textarea
-                            placeholder="Description"
-                            ng-model="newItem.description">
-                    </textarea>
-                </div>
-            </div>
-            <div class="row" ng-repeat="gearItem in gear">
-                <div class="small-2 columns">
-                    {{gearItem.name}}
-                </div>
-                <div class="small-2 columns">
-                    {{gearItem.weight}}
-                </div>
-                <div class="small-2 columns">
-                    {{gearItem.description}}
-                </div>
-                <div class="small-2 columns">
-                    {{gearItem.purchaseLink}}
-                </div>
-                <div class="small-2 columns">
-                    {{gearItem.imageUrl}}
-                </div>
-            </div>
+        <div class="small-6 columns panel small-centered" ng-hide="createMode">
+            <a ng-click="createMode = !createMode">Register?</a>
+            <input
+                type="text"
+                placeholder="Email"
+                ng-model="emailAddress"
+                >
+            <input
+                type="password"
+                placeholder="Password"
+                ng-model="password"
+                >
+            <button ng-click="login()">Login</button><br>
+            <a ng-click="forgotPassword()">Forgot Password?</a>
         </div>
+
+        <div class="small-6 columns panel small-centered" ng-show="createMode">
+            <a ng-click="createMode = !createMode">Login?</a>
+            <input
+                    type="text"
+                    placeholder="Email"
+                    ng-model="emailAddress">
+            <input
+                    type="password"
+                    placeholder="Password"
+                    ng-model="password">
+            <button ng-click="createUser()">Create User</button><br>
+            <a ng-click="forgotPassword()">Forgot Password?</a>
+        </div>
+
     </div>
+
+
 
 </div>
